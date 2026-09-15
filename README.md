@@ -1,5 +1,3 @@
-Copia todo el contenido que aparece dentro del siguiente bloque de código y guárdalo en un archivo llamado **`README.md`** en la raíz de tu repositorio:
-
 ```markdown
 # 👑 Invitación Digital de 15 Años — Anyoull Yaritza Gonzalez Rico
 
@@ -154,6 +152,3 @@ https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=NOM
 ## 💖 Créditos y Licencia
 
 Diseñado y programado con esmero para la celebración de los **15 Años de Anyoull Yaritza Gonzalez Rico** en Maripí, Boyacá.
-
-Distribuido bajo la Licencia MIT. ¡Siéntete libre de utilizarlo y adaptarlo para tus propios eventos!
-```
