@@ -459,7 +459,7 @@
     }
 
     /* ==========================================================
-       SECCIÓN 5: GALERÍA DE RECUERDOS (FOTO2 Y FOTO3) CON ONDA SUAVE
+       SECCIÓN 5: GALERÍA DE RECUERDOS (FOTO2 Y FOTO3) CON ONDA
        ========================================================== */
     .gallery-outer-wrapper {
       position: relative;
@@ -632,7 +632,6 @@
       letter-spacing: 1px;
     }
 
-    /* NUEVO ENLACE OFICIAL DE GOOGLE MAPS */
     .btn-details-maps {
       display: inline-block;
       background-color: #FFF2F5;
@@ -794,7 +793,7 @@
     }
 
     /* ==========================================================
-       SECCIÓN 8: CÓDIGO DE VESTIMENTA (CON COLORES ACTUALIZADOS)
+       SECCIÓN 8: CÓDIGO DE VESTIMENTA
        ========================================================== */
     .dresscode-section {
       background-color: var(--bg-pink);
@@ -909,7 +908,6 @@
       font-style: italic;
     }
 
-    /* TEXTO DE COLORES RESERVADOS ACTUALIZADO */
     .dresscode-reserved-note {
       font-family: var(--font-body);
       font-style: italic;
@@ -1063,12 +1061,11 @@
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       position: relative;
       z-index: 2;
     }
 
-    /* BOTONES RSVP COMPACTOS DE UNA SOLA LÍNEA */
     .rsvp-option-label {
       display: flex;
       align-items: center;
@@ -1096,6 +1093,83 @@
       margin-right: 12px;
       accent-color: var(--rose-primary);
       transform: scale(1.2);
+    }
+
+    /* ==========================================================
+       DESPLEGABLE ELEGANTE: NÚMERO DE PERSONAS
+       ========================================================== */
+    .rsvp-attendees-box {
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+      text-align: left;
+    }
+
+    .rsvp-attendees-label {
+      font-family: var(--font-caps);
+      font-size: 0.82rem;
+      letter-spacing: 2px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .rsvp-select-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .rsvp-custom-select {
+      width: 100%;
+      padding: 12px 38px 12px 16px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--rose-card);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1.18rem;
+      color: var(--text-dark);
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 2px 6px rgba(122, 40, 64, 0.08);
+      transition: border-color 0.2s ease;
+    }
+
+    .rsvp-custom-select:focus {
+      border-color: var(--rose-primary);
+    }
+
+    .rsvp-select-arrow {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+      stroke: var(--rose-primary);
+    }
+
+    /* Campo de texto numérico para más de 6 personas */
+    .rsvp-custom-input-wrapper {
+      margin-top: 10px;
+    }
+
+    .rsvp-custom-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: #FFFFFF;
+      border: 1.5px solid var(--rose-primary);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      outline: none;
+      box-sizing: border-box;
+      box-shadow: 0 2px 6px rgba(158, 59, 90, 0.12);
     }
 
     .btn-whatsapp-rsvp {
@@ -1466,7 +1540,6 @@
           <div class="details-card-city">Maripí, Boyacá</div>
           <div class="details-card-time">06:00 p.m.</div>
 
-          <!-- ENLACE DIRECTO DE MAPS ACTUALIZADO -->
           <a href="https://maps.app.goo.gl/uRkBLQErFVaHwk6Z8" target="_blank" rel="noopener noreferrer" class="btn-details-maps">
             VER UBICACIÓN
           </a>
@@ -1475,7 +1548,7 @@
     </section>
 
     <!-- ==========================================================
-         7. ITINERARIO ACTUALIZADO (INICIA CON MISA A LAS 6:00 PM)
+         7. ITINERARIO (INICIA CON MISA A LAS 6:00 PM)
          ========================================================== -->
     <section class="itinerary-section">
       <svg class="botanical-line-heart" style="top: 25px; left: 10%; width: 24px; height: 24px; --r: -30deg; opacity: 0.75;" viewBox="0 0 40 40">
@@ -1653,7 +1726,6 @@
           </div>
         </div>
 
-        <!-- RESERVA DE COLORES ACTUALIZADA -->
         <div class="dresscode-reserved-note">
           Nos reservamos los colores palo de rosa, blanco y dorado
         </div>
@@ -1724,7 +1796,7 @@
         Por favor, confirma tu asistencia antes del 20 de Septiembre de 2026 para reservar tu lugar en esta velada inolvidable.
       </p>
 
-      <!-- BOTONES RSVP COMPACTOS DE UNA SOLA LÍNEA -->
+      <!-- BOTONES DE SELECCIÓN COMPACTOS -->
       <div class="rsvp-options-container reveal-scale">
         <label class="rsvp-option-label">
           <input type="radio" name="rsvpStatus" value="SI" checked>
@@ -1734,6 +1806,33 @@
           <input type="radio" name="rsvpStatus" value="NO">
           <span>No podré asistir 💌</span>
         </label>
+      </div>
+
+      <!-- DESPLEGABLE CON OPCIÓN DE ESCRITURA -->
+      <div id="attendeesBox" class="rsvp-attendees-box reveal-scale">
+        <label for="attendeesSelect" class="rsvp-attendees-label">NÚMERO DE PERSONAS QUE ASISTEN:</label>
+        
+        <div class="rsvp-select-wrapper">
+          <select id="attendeesSelect" class="rsvp-custom-select">
+            <option value="1">1 Persona</option>
+            <option value="2">2 Personas</option>
+            <option value="3">3 Personas</option>
+            <option value="4">4 Personas</option>
+            <option value="5">5 Personas</option>
+            <option value="6">6 Personas</option>
+            <option value="mas">Más de 6 personas...</option>
+          </select>
+
+          <!-- Flecha Chevron Dorada/Rosewood -->
+          <svg class="rsvp-select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+
+        <!-- Campo de texto numérico para escribir cuando son más de 6 -->
+        <div id="customAttendeesInputWrapper" class="rsvp-custom-input-wrapper" style="display: none;">
+          <input type="number" id="customAttendeesInput" min="7" max="50" placeholder="Escribe la cantidad (ej: 8)" class="rsvp-custom-input">
+        </div>
       </div>
 
       <a href="#" id="whatsappRsvpBtn" class="btn-whatsapp-rsvp reveal-scale" target="_blank" rel="noopener noreferrer">
@@ -1752,7 +1851,7 @@
   </main>
 
   <!-- ==========================================================
-       JAVASCRIPT FUNCIONAL: CRONÓMETRO 2026, ANIMACIONES & RSVP
+       JAVASCRIPT FUNCIONAL COMPLETO
        ========================================================== -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1779,35 +1878,70 @@
       /* 2. LECTURA DE INVITADO EN URL (?invitado=Nombre) */
       const urlParams = new URLSearchParams(window.location.search);
       const rawGuest = urlParams.get('invitado') || urlParams.get('pase') || urlParams.get('guest');
+      
       let guestName = "Apreciado(a) Invitado(a)";
-
       if (rawGuest && rawGuest.trim() !== "") {
         guestName = decodeURIComponent(rawGuest.trim());
       }
       document.getElementById('guestNameDisplay').textContent = guestName;
 
-      /* 3. BOTÓN DE WHATSAPP RSVP CON FECHA 2026 (+573042394091) */
-      const whatsappBtn = document.getElementById('whatsappRsvpBtn');
+      /* 3. LÓGICA DEL DESPLEGABLE Y ESCRITURA DE ASISTENTES */
+      const attendeesBox = document.getElementById('attendeesBox');
+      const attendeesSelect = document.getElementById('attendeesSelect');
+      const customInputWrapper = document.getElementById('customAttendeesInputWrapper');
+      const customInput = document.getElementById('customAttendeesInput');
       const rsvpRadios = document.querySelectorAll('input[name="rsvpStatus"]');
+      const whatsappBtn = document.getElementById('whatsappRsvpBtn');
       const phoneNumber = "573042394091";
 
+      function getSelectedCount() {
+        const val = attendeesSelect.value;
+        if (val === "mas") {
+          const typed = parseInt(customInput.value);
+          return (!isNaN(typed) && typed > 6) ? typed : 7;
+        }
+        return parseInt(val) || 1;
+      }
+
+      function handleSelectChange() {
+        if (attendeesSelect.value === "mas") {
+          customInputWrapper.style.display = "block";
+          customInput.focus();
+        } else {
+          customInputWrapper.style.display = "none";
+        }
+        updateWhatsAppUrl();
+      }
+
+      attendeesSelect.addEventListener('change', handleSelectChange);
+      customInput.addEventListener('input', updateWhatsAppUrl);
+
+      /* 4. ACTUALIZACIÓN DINÁMICA DE LA RESPUESTA DE WHATSAPP */
       function updateWhatsAppUrl() {
         const selectedStatus = document.querySelector('input[name="rsvpStatus"]:checked').value;
         let message = "";
 
         if (selectedStatus === "SI") {
-          message = `¡Hola Anyoull! ✨ Con mucha alegría confirmo mi asistencia a tus 15 Años el 03 de Octubre de 2026 en el Salón Orlando Forero (Maripí, Boyacá).\n\n👤 Invitado: *${guestName}*\nNos vemos pronto para celebrar este día tan especial. 👑🥂`;
+          attendeesBox.style.display = "block";
+          const count = getSelectedCount();
+          
+          if (count === 1) {
+            message = `¡Hola Anyoull! ✨ Confirmo con mucha alegría mi asistencia a tus 15 Años el 03 de Octubre de 2026 en el Salón Orlando Forero (Maripí, Boyacá).\n\n👤 Invitado: *${guestName}*\n🎟️ Cupos confirmados: *1 persona*\n\n¡Nos vemos pronto para celebrar tu noche mágica! 👑🥂`;
+          } else {
+            message = `¡Hola Anyoull! ✨ Confirmamos con mucha alegría nuestra asistencia a tus 15 Años el 03 de Octubre de 2026 en el Salón Orlando Forero (Maripí, Boyacá).\n\n👤 Invitados: *${guestName}*\n🎟️ Cupos confirmados: *${count} personas*\n\n¡Nos vemos pronto para celebrar tu noche mágica! 👑🥂`;
+          }
         } else {
-          message = `¡Hola Anyoull! 💌 Agradezco de corazón tu invitación a tus 15 Años. Con pesar no podré acompañarte físicamente, pero te deseo una noche mágica y llena de bendiciones.\n\n👤 De: *${guestName}*`;
+          attendeesBox.style.display = "none";
+          message = `¡Hola Anyoull! 💌 Agradezco de corazón tu invitación a tus 15 Años. Con pesar no podremos acompañarte físicamente, pero te deseamos una noche mágica y llena de bendiciones.\n\n👤 De: *${guestName}*`;
         }
 
         whatsappBtn.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
       }
 
       rsvpRadios.forEach(radio => radio.addEventListener('change', updateWhatsAppUrl));
-      updateWhatsAppUrl();
+      updateWhatsAppUrl(); // Inicializar estado
 
-      /* 4. CRONÓMETRO REGRESIVO ACTIVO EN TIEMPO REAL (03 OCTUBRE 2026 - 18:00 HRS) */
+      /* 5. CRONÓMETRO REGRESIVO ACTIVO (03 OCTUBRE 2026 - 18:00 HRS) */
       const targetDate = new Date(2026, 9, 3, 18, 0, 0).getTime();
 
       const elDays = document.getElementById('timer-days');
