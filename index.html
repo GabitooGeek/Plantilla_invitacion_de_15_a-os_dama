@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mis XV Años | Anyoull Yaritza Gonzalez Rico</title>
+  
+  <!-- Tipografías de Alta Gama -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       VARIABLES Y PALETA ROSADA DE ALTA GAMA
+       ========================================================== */
+    :root {
+      --bg-pink: #F9E4EC;            /* Fondo rosado pastel suave */
+      --bg-pink-light: #FFF0F5;      /* Rosa tenue para tarjetas internas */
+      --bg-pink-deep: #F1D1DD;       /* Rosa de contraste para el pie/RSVP */
+      --rose-dark: #7A2840;          /* Rosewood profundo para textos */
+      --rose-primary: #9E3B5A;       /* Tono principal rosa viejo/frambuesa */
+      --rose-accent: #C25B7C;        /* Acento rosa vivo */
+      --rose-blush: #E8A2B5;         /* Rosa pastel empolvado */
+      --rose-card: #80233B;          /* Fondo de tarjeta de recepción */
+      --gold: #D4AF37;               /* Oro satinado */
+      --gold-light: #F7E7B4;
+      --gold-dark: #A37F2C;
+      --text-muted: #6E545E;
+      --text-dark: #422932;
+      --shadow-soft: 0 10px 30px rgba(122, 40, 64, 0.12);
+      --font-script: 'Great Vibes', cursive;
+      --font-serif: 'Playfair Display', serif;
+      --font-caps: 'Cinzel', serif;
+      --font-body: 'Cormorant Garamond', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #EBD2DC;
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding: 12px 0;
+    }
+
+    /* ==========================================================
+       ANIMACIONES POR SCROLL (SCROLL REVEAL NATIVO)
+       ========================================================== */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.93) translateY(18px);
+      transition: opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) scale(1) !important;
+    }
+
+    @keyframes gentleDrift {
+      0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+      50% { transform: translateY(-5px) rotate(calc(var(--r, 0deg) + 3deg)); }
+    }
+
+    /* ==========================================================
+       CHASIS TIPO TARJETA CON MARCO CONCÉNTRICO LIMPIO
+       ========================================================== */
+    .invitation-wrapper {
+      width: calc(100% - 20px);
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: var(--bg-pink);
+      box-shadow: 0 15px 45px rgba(122, 40, 64, 0.18);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border-radius: 14px;
+      border: 2.5px solid var(--rose-primary);
+    }
+
+    .invitation-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 1px solid var(--gold);
+      border-radius: 9px;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ==========================================================
+       ELEMENTOS BOTÁNICOS Y CORAZONES FLOTANTES
+       ========================================================== */
+    .botanical-line-rose {
+      display: block;
+      stroke: var(--rose-primary);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      pointer-events: none;
+      position: absolute;
+      z-index: 3;
+      animation: gentleDrift 4s ease-in-out infinite;
+    }
+
+    .botanical-line-heart {
+      display: block;
+      stroke: var(--rose-primary);
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: rgba(232, 162, 181, 0.2);
+      pointer-events: none;
+      position: absolute;
+      z-index: 3;
+      animation: gentleDrift 4.5s ease-in-out infinite;
+    }
+
+    /* ==========================================================
+       SECCIÓN 1: BANDERÍN Y ANUNCIO DE LOS PADRES
+       ========================================================== */
+    .header-banner-section {
+      background-color: var(--bg-pink);
+      padding: 0 0 25px 0;
+      position: relative;
+      text-align: center;
+    }
+
+    .banner-flag-container {
+      position: relative;
+      width: 100%;
+      filter: drop-shadow(0 10px 15px rgba(122, 40, 64, 0.12));
+      margin-bottom: 25px;
+    }
+
+    .banner-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .wax-seal-wrapper {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 74px;
+      height: 74px;
+      z-index: 10;
+      filter: drop-shadow(0 8px 15px rgba(163, 127, 44, 0.4));
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .wax-seal-wrapper:hover {
+      transform: translateX(-50%) scale(1.08);
+    }
+
+    .intro-blessing-text {
+      padding: 42px 28px 20px 28px;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.22rem;
+      line-height: 1.7;
+      color: var(--rose-primary);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .intro-blessing-text p {
+      margin-bottom: 16px;
+    }
+
+    .intro-blessing-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro-blessing-text strong {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--rose-dark);
+      font-style: normal;
+    }
+
+    /* ==========================================================
+       SECCIÓN 2: RETRATO ARQUEADO (foto1.jpg) & NOMBRE
+       ========================================================== */
+    .portrait-section {
+      position: relative;
+      width: 100%;
+      background-color: var(--bg-pink);
+      padding: 10px 0 30px 0;
+      text-align: center;
+    }
+
+    .portrait-arch-frame {
+      position: relative;
+      width: 82%;
+      margin: 0 auto;
+      padding: 5px;
+      border: 1px solid var(--gold);
+      border-radius: 226px 226px 12px 12px;
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 8px 20px rgba(122, 40, 64, 0.08);
+      z-index: 2;
+    }
+
+    .portrait-image-container {
+      width: 100%;
+      height: 380px;
+      border-radius: 220px 220px 8px 8px;
+      overflow: hidden;
+      position: relative;
+      border: 2.5px solid var(--rose-primary);
+      background-color: #E6D0D8;
+    }
+
+    .portrait-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .name-block {
+      padding: 30px 20px 15px 20px;
+      position: relative;
+    }
+
+    .quinceanera-name {
+      font-family: var(--font-script);
+      font-size: 3.5rem;
+      color: var(--rose-primary);
+      line-height: 1.1;
+      font-weight: 400;
+      margin-bottom: 2px;
+      text-shadow: 1px 1px 2px rgba(158, 59, 90, 0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .subtitle-xv {
+      font-family: var(--font-caps);
+      font-size: 1.05rem;
+      letter-spacing: 4px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==========================================================
+       SECCIÓN 3: HERO DE FECHA (SÁBADO 03 OCTUBRE 2026)
+       ========================================================== */
+    .date-hero-container {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      background-image: url('foto4.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #FFFFFF;
+      text-align: center;
+    }
+
+    .date-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(74, 20, 36, 0.65) 0%, rgba(35, 10, 18, 0.8) 100%);
+      z-index: 1;
+    }
+
+    .date-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 10px 20px 35px 20px;
+    }
+
+    .date-month {
+      font-family: var(--font-caps);
+      font-size: 1.6rem;
+      letter-spacing: 5px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .date-day-number {
+      font-family: var(--font-serif);
+      font-size: 5.5rem;
+      line-height: 1;
+      font-weight: 400;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin: 4px 0;
+    }
+
+    .date-year-day {
+      font-family: var(--font-caps);
+      font-size: 1.3rem;
+      letter-spacing: 4px;
+      font-weight: 400;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .chevron-transition-svg {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 36px;
+      z-index: 3;
+    }
+
+    .emotive-message-card {
+      background-color: var(--bg-pink);
+      padding: 40px 32px 30px 32px;
+      position: relative;
+      text-align: center;
+    }
+
+    .emotive-paragraph {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--rose-primary);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .emotive-paragraph:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ==========================================================
+       SECCIÓN 4: CRONÓMETRO REGRESIVO DINÁMICO
+       ========================================================== */
+    .countdown-section {
+      background-color: var(--bg-pink);
+      padding: 30px 25px 45px 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .countdown-header {
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .countdown-script-title {
+      font-family: var(--font-script);
+      font-size: 3.5rem;
+      color: var(--rose-primary);
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .countdown-sub-title {
+      display: block;
+      font-family: var(--font-caps);
+      font-size: 1rem;
+      letter-spacing: 4px;
+      color: var(--rose-primary);
+      margin-top: -6px;
+      margin-left: 55px;
+    }
+
+    .timer-display-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timer-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 60px;
+    }
+
+    .timer-digits {
+      font-family: var(--font-serif);
+      font-size: 2.7rem;
+      color: var(--rose-primary);
+      line-height: 1;
+      font-weight: 400;
+    }
+
+    .timer-separator {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--rose-primary);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .timer-labels-grid {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      font-family: var(--font-caps);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .countdown-pill-badge {
+      display: inline-block;
+      background-color: var(--rose-primary);
+      color: #FFFFFF;
+      padding: 10px 32px;
+      border-radius: 50px;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.15rem;
+      box-shadow: 0 6px 15px rgba(158, 59, 90, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ==========================================================
+       SECCIÓN 5: GALERÍA DE RECUERDOS (FOTO2 Y FOTO3)
+       ========================================================== */
+    .gallery-outer-wrapper {
+      position: relative;
+      width: 100%;
+      background-color: var(--rose-card);
+      padding: 42px 20px 48px 20px;
+    }
+
+    .smooth-wave-top {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 44px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .gallery-card {
+      position: relative;
+      margin-bottom: 22px;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(247, 231, 180, 0.3);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      z-index: 2;
+    }
+
+    .gallery-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.02);
+    }
+
+    /* ==========================================================
+       SECCIÓN 6: DETALLES DEL EVENTO (SALÓN ORLANDO FORERO)
+       ========================================================== */
+    .event-details-section {
+      background-color: var(--bg-pink);
+      padding: 45px 25px 50px 25px;
+      position: relative;
+      text-align: center;
+    }
+
+    .smooth-wave-details {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 44px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .details-header {
+      margin-bottom: 30px;
+      margin-top: 15px;
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .details-script-title {
+      font-family: var(--font-script);
+      font-size: 3.4rem;
+      color: var(--rose-primary);
+      line-height: 1;
+    }
+
+    .details-sub-title {
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      margin-top: -4px;
+      margin-left: 70px;
+    }
+
+    .details-card-container {
+      position: relative;
+      width: 90%;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    .details-card-backdrop {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 100%;
+      height: 100%;
+      background-color: var(--rose-blush);
+      border-radius: 4px;
+      z-index: 1;
+    }
+
+    .details-card-main {
+      position: relative;
+      background-color: var(--rose-card);
+      border-radius: 4px;
+      padding: 40px 25px 35px 25px;
+      color: #FFFFFF;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(122, 40, 64, 0.35);
+      border: 1px solid rgba(247, 231, 180, 0.25);
+    }
+
+    .reception-icon-wrapper {
+      margin: 0 auto 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 72px;
+    }
+
+    .reception-icon-asset {
+      max-width: 74px;
+      max-height: 74px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+    }
+
+    .champagne-tower-icon {
+      width: 74px;
+      height: 74px;
+      display: block;
+    }
+
+    .details-card-subtitle {
+      font-family: var(--font-script);
+      font-size: 3.2rem;
+      color: #FFFFFF;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .details-card-venue {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .details-card-city {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+      opacity: 0.95;
+    }
+
+    .details-card-time {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+    }
+
+    .btn-details-maps {
+      display: inline-block;
+      background-color: #FFF2F5;
+      color: var(--rose-primary);
+      text-decoration: none;
+      padding: 11px 30px;
+      border-radius: 50px;
+      font-family: var(--font-caps);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .btn-details-maps:hover {
+      background-color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ==========================================================
+       SECCIÓN 7: ITINERARIO (INCLUYE MISA DE 15 AÑOS A LAS 6 PM)
+       ========================================================== */
+    .itinerary-section {
+      background-color: var(--bg-pink);
+      padding: 30px 20px 45px 20px;
+      position: relative;
+    }
+
+    .itinerary-header {
+      text-align: center;
+      margin-bottom: 35px;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .itinerary-script-title {
+      font-family: var(--font-script);
+      font-size: 3.5rem;
+      color: var(--rose-primary);
+      line-height: 1;
+    }
+
+    .itinerary-sub-title {
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      margin-top: -4px;
+      margin-left: 65px;
+    }
+
+    .timeline-container {
+      position: relative;
+      width: 100%;
+      padding: 10px 0;
+      z-index: 2;
+    }
+
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      bottom: 20px;
+      left: 36%;
+      width: 2px;
+      background-color: var(--rose-primary);
+      transform: translateX(-50%);
+    }
+
+    .timeline-row {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: 34px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .timeline-row.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-icon-col {
+      width: 36%;
+      padding-right: 22px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .timeline-icon-asset {
+      max-width: 44px;
+      max-height: 52px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 2px 4px rgba(158, 59, 90, 0.15));
+    }
+
+    .timeline-icon-svg-fallback {
+      width: 44px;
+      height: 52px;
+      color: var(--rose-primary);
+    }
+
+    .timeline-node-rose {
+      position: absolute;
+      left: 36%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      z-index: 2;
+      background-color: var(--bg-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline-node-diamond {
+      width: 9px;
+      height: 9px;
+      background-color: var(--rose-primary);
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+    }
+
+    .timeline-info-col {
+      width: 64%;
+      padding-left: 22px;
+      text-align: left;
+    }
+
+    .timeline-time {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--rose-dark);
+      line-height: 1.2;
+    }
+
+    .timeline-activity {
+      font-family: var(--font-body);
+      font-size: 1.22rem;
+      color: var(--rose-primary);
+      line-height: 1.2;
+    }
+
+    /* ==========================================================
+       SECCIÓN 8: CÓDIGO DE VESTIMENTA (CON IMAGEN DENTRO DEL CUADRO)
+       ========================================================== */
+    .dresscode-section {
+      background-color: var(--bg-pink);
+      padding: 30px 20px 45px 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .dresscode-header {
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .dresscode-script-title {
+      font-family: var(--font-script);
+      font-size: 3.5rem;
+      color: var(--rose-primary);
+      line-height: 1;
+    }
+
+    .dresscode-sub-title {
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      margin-top: -4px;
+    }
+
+    .dresscode-editorial-card {
+      background: #FFF5F8;
+      border: 1px solid var(--rose-blush);
+      border-radius: 14px;
+      padding: 26px 20px 24px 20px;
+      margin: 0 auto;
+      max-width: 380px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      z-index: 2;
+    }
+
+    .dresscode-editorial-card::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed rgba(158, 59, 90, 0.25);
+      border-radius: 9px;
+      pointer-events: none;
+    }
+
+    .dresscode-illustration-box {
+      max-width: 200px;
+      margin: 4px auto 16px auto;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dresscode-image-asset {
+      width: 100%;
+      height: auto;
+      max-height: 230px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(122, 40, 64, 0.16));
+    }
+
+    .dresscode-category-badge {
+      display: inline-block;
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 4px;
+      color: var(--rose-dark);
+      font-weight: 700;
+      padding-bottom: 10px;
+      position: relative;
+    }
+
+    .dresscode-category-badge::after {
+      content: '✦  ✦  ✦';
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 6px;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+
+    .dresscode-rules-block {
+      margin: 14px 0 16px 0;
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      line-height: 1.65;
+      color: var(--text-dark);
+    }
+
+    .dresscode-rule-item {
+      margin-bottom: 6px;
+    }
+
+    .dresscode-rule-item strong {
+      font-family: var(--font-serif);
+      color: var(--rose-primary);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .dresscode-rule-item span {
+      font-style: italic;
+    }
+
+    .dresscode-reserved-note {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(158, 59, 90, 0.15);
+      padding-top: 12px;
+    }
+
+    /* ==========================================================
+       SECCIÓN 9: LLUVIA DE SOBRES (SOPORTA sobre.png)
+       ========================================================== */
+    .envelope-section {
+      background-color: var(--bg-pink);
+      padding: 30px 25px 45px 25px;
+      position: relative;
+      text-align: center;
+    }
+
+    .envelope-header {
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+    }
+
+    .envelope-script-title {
+      font-family: var(--font-script);
+      font-size: 3.5rem;
+      color: var(--rose-primary);
+      line-height: 1;
+    }
+
+    .envelope-sub-title {
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      font-weight: 600;
+      margin-top: -4px;
+    }
+
+    .envelope-icon-container {
+      position: relative;
+      z-index: 2;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .envelope-image-asset {
+      width: auto;
+      height: auto;
+      max-width: 90px;
+      max-height: 90px;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 3px 6px rgba(158, 59, 90, 0.16));
+    }
+
+    .envelope-svg-fallback {
+      width: 80px;
+      height: 80px;
+      display: block;
+    }
+
+    .envelope-message {
+      position: relative;
+      z-index: 2;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--rose-primary);
+    }
+
+    /* ==========================================================
+       SECCIÓN 10: PASE PERSONALIZADO & CONFIRMACIÓN (RSVP)
+       ========================================================== */
+    .rsvp-section {
+      background-color: var(--bg-pink-deep);
+      padding: 40px 25px 55px 25px;
+      text-align: center;
+      position: relative;
+      border-top: 1px solid rgba(158, 59, 90, 0.15);
+    }
+
+    .guest-pass-card {
+      background-color: var(--bg-pink-light);
+      border: 1px solid var(--rose-blush);
+      border-radius: 8px;
+      padding: 25px 20px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .guest-pass-badge {
+      font-family: var(--font-caps);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 600;
+    }
+
+    .guest-pass-name {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--rose-dark);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .guest-pass-msg {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--text-muted);
+    }
+
+    .rsvp-header-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+
+    .rsvp-title {
+      font-family: var(--font-script);
+      font-size: 3.2rem;
+      color: var(--rose-primary);
+      line-height: 1;
+    }
+
+    .rsvp-instruction {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      padding: 0 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .rsvp-options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 25px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .rsvp-option-label {
+      display: flex;
+      align-items: center;
+      background: var(--bg-pink-light);
+      border: 1.5px solid var(--rose-blush);
+      padding: 12px 18px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      color: var(--text-dark);
+      transition: all 0.25s ease;
+    }
+
+    .rsvp-option-label:has(input:checked) {
+      border-color: var(--rose-primary);
+      background-color: #FFFFFF;
+      color: var(--rose-dark);
+      font-weight: 600;
+    }
+
+    .rsvp-option-label input {
+      margin-right: 12px;
+      accent-color: var(--rose-primary);
+      transform: scale(1.2);
+    }
+
+    .btn-whatsapp-rsvp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: var(--font-caps);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-whatsapp-rsvp:hover {
+      background-color: #20BA59;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+    }
+
+    .footer-credits {
+      margin-top: 35px;
+      margin-bottom: 10px;
+      font-family: var(--font-caps);
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: var(--rose-primary);
+      opacity: 0.75;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="invitation-wrapper">
+
+    <!-- ==========================================================
+         1. BANDERÍN SUPERIOR Y MENSAJE DE LOS PADRES
+         ========================================================== -->
+    <section class="header-banner-section reveal-on-scroll">
+      <svg class="botanical-line-rose" style="top: 15px; left: 24px; width: 32px; height: 32px; --r: -35deg; opacity: 0.65;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 18px; right: 40px; width: 20px; height: 20px; --r: 25deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 35px; right: 20px; width: 28px; height: 28px; --r: 45deg; opacity: 0.6;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+
+      <div class="banner-flag-container">
+        <svg class="banner-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="damaskPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M20 0 C15 10 5 15 0 20 C5 25 15 30 20 40 C25 30 35 25 40 20 C35 15 25 10 20 0 Z" fill="#F2D2DE" opacity="0.5"/>
+              <circle cx="20" cy="20" r="3" fill="#E8BDCE" opacity="0.55"/>
+            </pattern>
+            <linearGradient id="goldMetallic" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FCEAB3"/>
+              <stop offset="35%" stop-color="#D4AF37"/>
+              <stop offset="70%" stop-color="#AA8222"/>
+              <stop offset="100%" stop-color="#7B5B0D"/>
+            </linearGradient>
+            <radialGradient id="waxGrad" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#FFE8A3"/>
+              <stop offset="45%" stop-color="#D4AF37"/>
+              <stop offset="85%" stop-color="#9C7721"/>
+              <stop offset="100%" stop-color="#674A0B"/>
+            </radialGradient>
+          </defs>
+
+          <polygon points="15,0 485,0 485,165 250,230 15,165" fill="#F9E4EC"/>
+          <polygon points="15,0 485,0 485,165 250,230 15,165" fill="url(#damaskPattern)"/>
+          <polyline points="15,0 15,165 250,230 485,165 485,0" stroke="#9E3B5A" stroke-width="4" fill="none"/>
+          <polyline points="23,0 23,160 250,222 477,160 477,0" stroke="#C25B7C" stroke-width="1.5" stroke-dasharray="8,4" fill="none"/>
+
+          <text x="250" y="88" text-anchor="middle" font-family="'Great Vibes', cursive" font-size="52" fill="url(#goldMetallic)" filter="drop-shadow(1px 2px 3px rgba(122, 40, 64, 0.25))">Anyoull Yaritza</text>
+          <text x="250" y="134" text-anchor="middle" font-family="'Cinzel', serif" font-size="19" font-weight="700" letter-spacing="5" fill="url(#goldMetallic)" filter="drop-shadow(1px 2px 3px rgba(122, 40, 64, 0.25))">GONZALEZ RICO</text>
+        </svg>
+
+        <div class="wax-seal-wrapper" title="Sello Real">
+          <svg viewBox="0 0 100 100" width="100%" height="100%">
+            <path d="M50 4 C65 2, 78 8, 88 18 C98 28, 97 42, 95 56 C93 70, 85 85, 72 92 C58 99, 40 97, 26 91 C12 85, 3 72, 5 55 C7 38, 11 25, 23 15 C34 5, 42 6, 50 4 Z" fill="url(#waxGrad)"/>
+            <circle cx="50" cy="50" r="34" fill="#B38928" stroke="#FFE79E" stroke-width="1.8"/>
+            <circle cx="50" cy="50" r="30" fill="url(#waxGrad)"/>
+            <path d="M40 68 L60 68 M43 65 C43 45 46 38 50 38 C54 38 57 45 57 65 Z" stroke="#5A3E05" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <circle cx="50" cy="49" r="4.5" fill="#9E3B5A"/>
+            <path d="M50 53.5 L50 64 M47 57 C48 56 50 56 50 58 M53 59 C52 58 50 58 50 60" stroke="#4A654E" stroke-width="1.2" fill="none"/>
+            <ellipse cx="50" cy="38" rx="2" ry="1.2" fill="#FFE8A3"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- TEXTO DE ANUNCIO OFICIAL DE LOS PADRES -->
+      <div class="intro-blessing-text">
+        <p>
+          Con el corazón lleno de amor y orgullo, <strong>José Edilfonso González Briceño</strong> y <strong>Sandy Maricela Rico García</strong>, tenemos la dicha de anunciar que nuestra princesa, <strong>Anyoull Yaritza González Rico</strong>, está por vivir su propio cuento de hadas.
+        </p>
+        <p>
+          Hace quince años llegó un angelito a nuestro corazón para iluminarlo con su luz, su sonrisa y su ternura. Es nuestra pequeña y hermosa princesa y hoy, con los ojos llenos de emoción, como en los cuentos de hadas más hermosos, deja su corona de princesita para convertirse en nuestra reina.
+        </p>
+      </div>
+
+      <svg class="botanical-line-heart" style="bottom: 4px; right: 28%; width: 18px; height: 18px; --r: 15deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+    </section>
+
+    <!-- ==========================================================
+         2. RETRATO ARQUEADO CON FLORES Y CORAZONES FLOTANTES
+         ========================================================== -->
+    <section class="portrait-section">
+      <svg class="botanical-line-rose" style="top: 40px; left: 4%; width: 34px; height: 34px; --r: -25deg; opacity: 0.7;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 110px; right: 4%; width: 22px; height: 22px; --r: 30deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 180px; right: 3%; width: 28px; height: 28px; --r: 60deg; opacity: 0.65;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 240px; left: 4%; width: 20px; height: 20px; --r: -20deg; opacity: 0.8;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 290px; left: 5%; width: 30px; height: 30px; --r: -85deg; opacity: 0.6;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+
+      <div class="portrait-arch-frame reveal-scale">
+        <div class="portrait-image-container">
+          <img src="foto1.jpg" alt="Anyoull Yaritza - Mis XV Años" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%23F5E6EB\'/><text x=\'50%\' y=\'50%\' font-family=\'serif\' font-size=\'22\' fill=\'%239E3B5A\' text-anchor=\'middle\'>foto1.jpg</text></svg>'">
+        </div>
+      </div>
+
+      <!-- ZONA DEL NOMBRE: ABUNDANCIA DE FLORES Y CORAZONES -->
+      <div class="name-block reveal-on-scroll">
+        <svg class="botanical-line-rose" style="top: 4px; right: 16%; width: 44px; height: 44px; --r: 15deg; opacity: 0.85;" viewBox="0 0 60 60">
+          <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+          <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+        </svg>
+        <svg class="botanical-line-rose" style="top: 10px; left: 14%; width: 34px; height: 34px; --r: -35deg; opacity: 0.75;" viewBox="0 0 60 60">
+          <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+          <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+        </svg>
+
+        <svg class="botanical-line-heart" style="top: -4px; right: 28%; width: 22px; height: 22px; --r: 18deg; opacity: 0.85;" viewBox="0 0 40 40">
+          <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+        </svg>
+        <svg class="botanical-line-heart" style="top: 2px; left: 24%; width: 20px; height: 20px; --r: -22deg; opacity: 0.8;" viewBox="0 0 40 40">
+          <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+        </svg>
+
+        <svg class="botanical-line-rose" style="top: 38px; right: 5%; width: 30px; height: 30px; --r: 55deg; opacity: 0.7;" viewBox="0 0 60 60">
+          <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+          <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+        </svg>
+        <svg class="botanical-line-heart" style="top: 42px; left: 6%; width: 24px; height: 24px; --r: -15deg; opacity: 0.85;" viewBox="0 0 40 40">
+          <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+        </svg>
+
+        <h1 class="quinceanera-name">Anyoull Yaritza</h1>
+        <div class="subtitle-xv">MIS XV AÑOS</div>
+
+        <svg class="botanical-line-rose" style="bottom: -18px; right: 26%; width: 28px; height: 28px; --r: 95deg; opacity: 0.7;" viewBox="0 0 60 60">
+          <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+          <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+        </svg>
+        <svg class="botanical-line-heart" style="bottom: -16px; left: 24%; width: 18px; height: 18px; --r: -30deg; opacity: 0.8;" viewBox="0 0 40 40">
+          <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         3. HERO EDITORIAL DE FECHA (SÁBADO 03 OCTUBRE 2026)
+         ========================================================== -->
+    <section class="date-hero-container reveal-scale">
+      <div class="date-hero-overlay"></div>
+      
+      <div class="date-hero-content">
+        <div class="date-month">OCTUBRE</div>
+        <div class="date-day-number">03</div>
+        <div class="date-year-day">SÁBADO - 2026</div>
+      </div>
+
+      <svg class="chevron-transition-svg" viewBox="0 0 500 40" preserveAspectRatio="none" fill="#F9E4EC">
+        <polygon points="0,40 500,40 500,32 250,0 0,32"/>
+      </svg>
+    </section>
+
+    <section class="emotive-message-card reveal-on-scroll">
+      <svg class="botanical-line-rose" style="top: 14px; right: 22px; width: 44px; height: 44px; --r: 15deg;" viewBox="0 0 60 60">
+        <path d="M30 12 C34 8 42 10 43 16 C44 22 36 27 30 27 C24 27 16 22 17 16 C18 10 26 8 30 12 Z"/>
+        <path d="M30 27 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 25px; left: 24px; width: 22px; height: 22px; --r: -25deg; opacity: 0.7;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 25px; right: 26px; width: 24px; height: 24px; --r: 35deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 48%; left: 14px; width: 28px; height: 28px; --r: -55deg; opacity: 0.5;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+
+      <p class="emotive-paragraph">
+        Dicen que la magia existe para quienes creen en los sueños, y que hay noches capaces de quedarse para siempre en el corazón. Ha llegado el momento de abrir las puertas de un cuento donde la ilusión, la elegancia y el amor serán los protagonistas.
+      </p>
+      <p class="emotive-paragraph">
+        Será un privilegio contar con tu presencia para compartir una noche que marcará el inicio de una nueva etapa en mi vida.
+      </p>
+
+      <svg class="botanical-line-rose" style="bottom: 14px; left: 22px; width: 44px; height: 44px; --r: -165deg;" viewBox="0 0 60 60">
+        <path d="M30 12 C34 8 42 10 43 16 C44 22 36 27 30 27 C24 27 16 22 17 16 C18 10 26 8 30 12 Z"/>
+        <path d="M30 27 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+    </section>
+
+    <!-- ==========================================================
+         4. CRONÓMETRO REGRESIVO CON CORAZONES FLOTANTES
+         ========================================================== -->
+    <section class="countdown-section reveal-on-scroll">
+      <svg class="botanical-line-rose" style="top: 15px; left: 14%; width: 28px; height: 28px; --r: -45deg; opacity: 0.6;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 18px; right: 15%; width: 22px; height: 22px; --r: 28deg; opacity: 0.8;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="countdown-header">
+        <span class="countdown-script-title">Ya casi</span>
+        <svg class="botanical-line-rose" style="top: -10px; right: -24px; width: 36px; height: 36px; --r: 35deg;" viewBox="0 0 60 60">
+          <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+          <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+        </svg>
+        <span class="countdown-sub-title">ES MI DÍA</span>
+      </div>
+
+      <svg class="botanical-line-heart" style="top: 50%; left: 5%; width: 22px; height: 22px; --r: -20deg; opacity: 0.7;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 52%; right: 5%; width: 24px; height: 24px; --r: 35deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="timer-display-grid">
+        <div class="timer-unit">
+          <span class="timer-digits" id="timer-days">00</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="timer-unit">
+          <span class="timer-digits" id="timer-hours">00</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="timer-unit">
+          <span class="timer-digits" id="timer-minutes">00</span>
+        </div>
+        <span class="timer-separator">:</span>
+        <div class="timer-unit">
+          <span class="timer-digits" id="timer-seconds">00</span>
+        </div>
+      </div>
+
+      <div class="timer-labels-grid">
+        <span>DIAS</span>
+        <span>HRS</span>
+        <span>MIN</span>
+        <span>SEG</span>
+      </div>
+
+      <div>
+        <span class="countdown-pill-badge">Prepárate, sólo faltan...</span>
+      </div>
+
+      <svg class="botanical-line-heart" style="bottom: 12px; left: 20%; width: 18px; height: 18px; --r: -15deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+    </section>
+
+    <!-- ==========================================================
+         5. GALERÍA DE RECUERDOS (FOTO2 Y FOTO3) CON ONDA SUAVE
+         ========================================================== -->
+    <section class="gallery-outer-wrapper">
+      <svg class="smooth-wave-top" viewBox="0 0 1200 80" preserveAspectRatio="none" fill="#F9E4EC">
+        <path d="M0,0 L1200,0 L1200,35 C1050,75 900,15 750,45 C600,75 450,15 300,50 C150,80 50,20 0,40 Z"/>
+      </svg>
+
+      <svg class="botanical-line-heart" style="top: 45px; left: 16px; width: 26px; height: 26px; stroke: #F7E7B4; --r: -25deg; opacity: 0.55;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 45px; right: 15px; width: 34px; height: 34px; stroke: #F7E7B4; --r: -20deg; opacity: 0.5;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 25px; right: 16px; width: 24px; height: 24px; stroke: #F7E7B4; --r: 30deg; opacity: 0.55;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="gallery-card reveal-scale">
+        <img src="foto2.jpg" alt="Recuerdo Anyoull 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'350\'><rect width=\'100%\' height=\'100%\' fill=\'%23F5E6EB\'/><text x=\'50%\' y=\'50%\' font-family=\'serif\' font-size=\'20\' fill=\'%239E3B5A\' text-anchor=\'middle\'>foto2.jpg</text></svg>'">
+      </div>
+
+      <div class="gallery-card reveal-scale" style="transition-delay: 0.15s;">
+        <img src="foto3.jpg" alt="Recuerdo Anyoull 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'350\'><rect width=\'100%\' height=\'100%\' fill=\'%23F5E6EB\'/><text x=\'50%\' y=\'50%\' font-family=\'serif\' font-size=\'20\' fill=\'%239E3B5A\' text-anchor=\'middle\'>foto3.jpg</text></svg>'">
+      </div>
+    </section>
+
+    <!-- ==========================================================
+       SECCIÓN 6: DETALLES DEL EVENTO (SALÓN ORLANDO FORERO)
+       ========================================================== -->
+    <section class="event-details-section">
+      <svg class="smooth-wave-details" viewBox="0 0 1200 80" preserveAspectRatio="none" fill="#80233B">
+        <path d="M0,0 L1200,0 L1200,35 C1050,70 900,10 750,45 C600,80 450,15 300,50 C150,85 50,15 0,40 Z"/>
+      </svg>
+
+      <svg class="botanical-line-heart" style="top: 25px; left: 8%; width: 26px; height: 26px; --r: -25deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 70px; right: 6%; width: 28px; height: 28px; --r: 50deg; opacity: 0.6;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 30px; left: 6%; width: 24px; height: 24px; --r: 30deg; opacity: 0.7;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="details-header reveal-on-scroll">
+        <div class="details-script-title">Detalles</div>
+        <div class="details-sub-title">DEL EVENTO</div>
+      </div>
+
+      <div class="details-card-container reveal-scale">
+        <div class="details-card-backdrop"></div>
+        
+        <div class="details-card-main">
+          <div class="reception-icon-wrapper">
+            <img src="recepcion.png" alt="Recepción" class="reception-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="champagne-tower-icon" viewBox="0 0 80 80" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M33 16 C33 24 37 28 40 28 C43 28 47 24 47 16 Z M40 28 L40 37 M34 37 L46 37"/>
+              <path d="M21 38 C21 46 25 49 28 49 C31 49 35 46 35 38 Z M28 49 L28 58 M22 58 L34 58"/>
+              <path d="M45 38 C45 46 49 49 52 49 C55 49 59 46 59 38 Z M52 49 L52 58 M46 58 L58 58"/>
+              <circle cx="40" cy="11" r="1.5" fill="#FFFFFF"/>
+              <circle cx="28" cy="33" r="1.5" fill="#FFFFFF"/>
+              <circle cx="52" cy="33" r="1.5" fill="#FFFFFF"/>
+            </svg>
+          </div>
+
+          <div class="details-card-subtitle">Recepción</div>
+          <div class="details-card-venue">Salón Orlando Forero</div>
+          <div class="details-card-city">Maripí, Boyacá</div>
+          <div class="details-card-time">06:00 p.m.</div>
+
+          <a href="https://maps.app.goo.gl/a78f864bDQj7yPof6" target="_blank" rel="noopener noreferrer" class="btn-details-maps">
+            VER UBICACIÓN
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         7. ITINERARIO ACTUALIZADO (INICIA CON MISA A LAS 6:00 PM)
+         ========================================================== -->
+    <section class="itinerary-section">
+      <svg class="botanical-line-heart" style="top: 25px; left: 10%; width: 24px; height: 24px; --r: -30deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 15%; right: 12%; width: 36px; height: 36px; --r: 30deg; opacity: 0.7;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 38%; right: 8%; width: 22px; height: 22px; --r: 20deg; opacity: 0.7;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-heart" style="top: 60%; left: 8%; width: 20px; height: 20px; --r: -35deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="bottom: 15px; left: 14%; width: 28px; height: 28px; --r: 135deg; opacity: 0.65;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+
+      <div class="itinerary-header reveal-on-scroll">
+        <div class="itinerary-script-title">Itinerario</div>
+        <div class="itinerary-sub-title">DE ACTIVIDADES</div>
+      </div>
+
+      <div class="timeline-container">
+
+        <!-- 1. MISA DE QUINCE AÑOS (misa.png) -->
+        <div class="timeline-row">
+          <div class="timeline-icon-col">
+            <img src="misa.png" alt="Misa de Quince Años" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <!-- Respaldo Vectorial Iglesia/Capilla -->
+            <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M30 12 L30 20 M26 16 L34 16"/> <!-- Cruz -->
+              <path d="M30 20 L16 32 L44 32 Z"/> <!-- Tejado -->
+              <path d="M20 32 L20 54 L40 54 L40 32"/> <!-- Muros -->
+              <path d="M26 54 L26 42 C26 38 34 38 34 42 L34 54"/> <!-- Puerta arqueada -->
+              <circle cx="30" cy="27" r="2.5" fill="currentColor"/> <!-- Campana / Rosal -->
+            </svg>
+          </div>
+          <div class="timeline-node-rose">
+            <div class="timeline-node-diamond"></div>
+          </div>
+          <div class="timeline-info-col">
+            <div class="timeline-time">06:00 p.m</div>
+            <div class="timeline-activity">Misa de quince años</div>
+          </div>
+        </div>
+
+        <!-- 2. LLEGADA DE INVITADOS (icono1.png) -->
+        <div class="timeline-row">
+          <div class="timeline-icon-col">
+            <img src="icono1.png" alt="Llegada" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M14 18 C14 30 22 34 30 34 C38 34 46 30 46 18 Z"/>
+              <path d="M12 18 L48 18 M15 21 L45 21"/>
+              <circle cx="25" cy="27" r="1" fill="currentColor"/>
+              <circle cx="35" cy="26" r="1" fill="currentColor"/>
+              <path d="M30 34 L30 52 M18 52 C24 50 36 50 42 52"/>
+              <path d="M23 40 C18 36 17 43 25 43 C30 43 30 39 23 40 Z M37 40 C42 36 43 43 35 43 C30 43 30 39 37 40 Z" fill="currentColor"/>
+              <path d="M25 43 L20 54 L26 53 L28 44 M35 43 L40 54 L34 53 L32 44" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="timeline-node-rose">
+            <div class="timeline-node-diamond"></div>
+          </div>
+          <div class="timeline-info-col">
+            <div class="timeline-time">07:00 p.m</div>
+            <div class="timeline-activity">Llegada de invitados</div>
+          </div>
+        </div>
+
+        <!-- 3. INICIO DEL PROTOCOLO (icono2.png) -->
+        <div class="timeline-row">
+          <div class="timeline-icon-col">
+            <img src="icono2.png" alt="Protocolo" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M12 36 C14 43 18 45 26 42 C33 39 40 45 44 49 C48 49 50 47 48 44 C42 38 36 30 29 30 C20 30 16 33 12 36 Z"/>
+              <path d="M26 34 C30 34 36 40 42 45" stroke-width="1.5"/>
+              <path d="M14 38 L16 54 L13 54 L12 36" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="timeline-node-rose">
+            <div class="timeline-node-diamond"></div>
+          </div>
+          <div class="timeline-info-col">
+            <div class="timeline-time">08:00 p.m</div>
+            <div class="timeline-activity">Inicio del protocolo</div>
+          </div>
+        </div>
+
+        <!-- 4. BRINDIS Y CENA (icono3.png) -->
+        <div class="timeline-row">
+          <div class="timeline-icon-col">
+            <img src="icono3.png" alt="Brindis" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <path d="M20 22 L24 33 C25 36 21 38 18 37 L14 26 C13 23 16 21 20 22 Z"/>
+              <path d="M16 28 L23 30 L22 34 C21 36 18 36 17 35 Z" fill="currentColor"/>
+              <path d="M20 37 L14 52 M10 52 L20 50"/>
+              <path d="M40 22 L36 33 C35 36 39 38 42 37 L46 26 C47 23 44 21 40 22 Z"/>
+              <path d="M44 28 L37 30 L38 34 C39 36 42 36 43 35 Z" fill="currentColor"/>
+              <path d="M40 37 L46 52 M40 50 L50 52"/>
+              <circle cx="28" cy="27" r="1.2" fill="currentColor"/>
+              <circle cx="32" cy="29" r="1.2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="timeline-node-rose">
+            <div class="timeline-node-diamond"></div>
+          </div>
+          <div class="timeline-info-col">
+            <div class="timeline-time">09:00 p.m</div>
+            <div class="timeline-activity">Brindis y cena</div>
+          </div>
+        </div>
+
+        <!-- 5. RUMBA (icono4.png) -->
+        <div class="timeline-row">
+          <div class="timeline-icon-col">
+            <img src="icono4.png" alt="Rumba" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+              <circle cx="22" cy="24" r="3"/>
+              <path d="M22 27 L18 37 M22 27 L28 20"/>
+              <path d="M18 37 L12 49 L32 49 L26 37 Z"/>
+              <path d="M19 49 L19 55 M25 49 L25 55"/>
+              <circle cx="36" cy="24" r="3"/>
+              <path d="M28 20 L33 27 M36 27 L44 32"/>
+              <path d="M36 27 L36 41"/>
+              <path d="M36 41 L33 55 M36 41 L39 55"/>
+            </svg>
+          </div>
+          <div class="timeline-node-rose">
+            <div class="timeline-node-diamond"></div>
+          </div>
+          <div class="timeline-info-col">
+            <div class="timeline-time">10:00 p.m</div>
+            <div class="timeline-activity">Rumba</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         8. CÓDIGO DE VESTIMENTA (CON IMAGEN DENTRO DEL CUADRO)
+         ========================================================== -->
+    <section class="dresscode-section">
+      <svg class="botanical-line-heart" style="top: 15px; left: 10%; width: 24px; height: 24px; --r: -25deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 18px; right: 10%; width: 34px; height: 34px; --r: 40deg; opacity: 0.7;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 15px; right: 8%; width: 22px; height: 22px; --r: 20deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="dresscode-header reveal-on-scroll">
+        <div class="dresscode-script-title">Código</div>
+        <div class="dresscode-sub-title">DE VESTIMENTA</div>
+      </div>
+
+      <div class="dresscode-editorial-card reveal-scale">
+        <div class="dresscode-illustration-box">
+          <img src="vestidos.png" alt="Código de Vestimenta" class="dresscode-image-asset" onerror="this.parentElement.style.display='none';">
+        </div>
+
+        <div class="dresscode-category-badge">ELEGANTE • FORMAL</div>
+
+        <div class="dresscode-rules-block">
+          <div class="dresscode-rule-item">
+            <strong>Chicos:</strong> <span>Traje / Color negro</span>
+          </div>
+          <div class="dresscode-rule-item">
+            <strong>Chicas:</strong> <span>Vestido de gala (Divinas)</span>
+          </div>
+        </div>
+
+        <div class="dresscode-reserved-note">
+          Nos reservamos los colores dorado y azul noche
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         9. LLUVIA DE SOBRES (SOPORTA sobre.png)
+         ========================================================== -->
+    <section class="envelope-section reveal-on-scroll">
+      <svg class="botanical-line-heart" style="top: 15px; left: 14%; width: 26px; height: 26px; --r: -25deg; opacity: 0.8;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 20px; right: 12%; width: 36px; height: 36px; --r: 35deg; opacity: 0.7;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 15px; right: 14%; width: 22px; height: 22px; --r: 30deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="envelope-header">
+        <div class="envelope-script-title">Lluvia</div>
+        <div class="envelope-sub-title">DE SOBRES</div>
+      </div>
+
+      <div class="envelope-icon-container reveal-scale">
+        <img src="sobre.png" alt="Lluvia de Sobres" class="envelope-image-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <svg class="envelope-svg-fallback" viewBox="0 0 80 80" width="100%" height="100%" fill="none" stroke="#9E3B5A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+          <path d="M12 36 L40 56 L68 36 L68 68 L12 68 Z"/>
+          <path d="M12 36 L40 16 L68 36"/>
+          <path d="M22 38 L22 24 L58 24 L58 38" fill="#FFF0F5"/>
+          <path d="M40 35 C38 32 35 32 33 34 C31 37 34 40 40 44 C46 40 49 37 47 34 C45 32 42 32 40 35 Z" fill="#9E3B5A"/>
+        </svg>
+      </div>
+
+      <div class="envelope-message">
+        Tu compañía es nuestro mejor regalo
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         10. PASE PERSONALIZADO & CONFIRMACIÓN (RSVP)
+         ========================================================== -->
+    <section class="rsvp-section">
+      <svg class="botanical-line-heart" style="top: 15px; left: 8%; width: 26px; height: 26px; --r: -25deg; opacity: 0.8;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+      <svg class="botanical-line-rose" style="top: 28%; right: 6%; width: 28px; height: 28px; --r: 65deg; opacity: 0.6;" viewBox="0 0 60 60">
+        <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
+        <path d="M30 28 C30 42 33 50 34 56 M31 38 C26 36 21 39 20 44 M32 45 C37 43 42 45 43 50"/>
+      </svg>
+      <svg class="botanical-line-heart" style="bottom: 75px; right: 8%; width: 24px; height: 24px; --r: 20deg; opacity: 0.75;" viewBox="0 0 40 40">
+        <path d="M20 32 C12 25 6 19 6 12 C6 7.5 9.5 4 14 4 C17 4 19 6 20 8 C21 6 23 4 26 4 C30.5 4 34 7.5 34 12 C34 19 28 25 20 32 Z"/>
+      </svg>
+
+      <div class="guest-pass-card reveal-scale">
+        <span class="guest-pass-badge">PASE DE HONOR</span>
+        <div class="guest-pass-name" id="guestNameDisplay">Apreciado Invitado</div>
+        <div class="guest-pass-msg">Nos complace extenderte esta invitación especial.</div>
+      </div>
+
+      <div class="rsvp-header-wrapper reveal-on-scroll">
+        <div class="rsvp-title">Confirmación</div>
+      </div>
+
+      <p class="rsvp-instruction reveal-on-scroll">
+        Por favor, confirma tu asistencia antes del 20 de Septiembre de 2026 para reservar tu lugar en esta velada inolvidable.
+      </p>
+
+      <div class="rsvp-options-container reveal-scale">
+        <label class="rsvp-option-label">
+          <input type="radio" name="rsvpStatus" value="SI" checked>
+          <span>¡Sí, asistiré con mucho gusto! 🎉</span>
+        </label>
+        <label class="rsvp-option-label">
+          <input type="radio" name="rsvpStatus" value="NO">
+          <span>Lo siento, no podré acompañarte 💌</span>
+        </label>
+      </div>
+
+      <a href="#" id="whatsappRsvpBtn" class="btn-whatsapp-rsvp reveal-scale" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#FFFFFF">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.075-2.091-.497-1.467-.6-2.42-2.079-2.493-2.176-.073-.098-.592-.786-.592-1.5 0-.713.374-1.066.507-1.21.133-.145.29-.182.387-.182s.194.004.278.01c.089.006.208-.033.325.249.122.293.416 1.015.453 1.089.037.073.061.16.012.257-.049.098-.073.16-.145.244-.073.085-.154.19-.22.256-.073.073-.149.153-.064.299.085.145.378.623.81 1.008.557.496 1.026.65 1.171.723.146.073.232.061.318-.037.085-.098.366-.426.463-.572.098-.146.195-.122.329-.073.134.049.854.402 1.001.475.146.074.244.11.28.171.037.061.037.354-.107.759z"/>
+          <path d="M12 2C6.486 2 2 6.486 2 12c0 1.846.504 3.58 1.385 5.074L2 22l5.087-1.334C8.543 21.517 10.231 22 12 22c5.514 0 10-4.486 10-10S17.514 2 12 2zm0 18c-1.603 0-3.119-.481-4.403-1.312l-.316-.205-3.003.788.802-2.926-.226-.341C3.967 14.685 3.5 13.376 3.5 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5z"/>
+        </svg>
+        <span>CONFIRMAR ASISTENCIA</span>
+      </a>
+
+      <div class="footer-credits">
+        ANYOULL YARITZA • 15 AÑOS • MARIPÍ, BOYACÁ
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================
+       JAVASCRIPT FUNCIONAL: CRONÓMETRO 2026, ANIMACIONES & RSVP
+       ========================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* 1. ANIMACIONES SUAVES POR SCROLL */
+      const animatedElements = document.querySelectorAll('.reveal-on-scroll, .reveal-scale, .timeline-row');
+
+      const scrollObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      animatedElements.forEach(el => scrollObserver.observe(el));
+
+      /* 2. LECTURA DE INVITADO EN URL (?invitado=Nombre) */
+      const urlParams = new URLSearchParams(window.location.search);
+      const rawGuest = urlParams.get('invitado') || urlParams.get('pase') || urlParams.get('guest');
+      let guestName = "Apreciado(a) Invitado(a)";
+
+      if (rawGuest && rawGuest.trim() !== "") {
+        guestName = decodeURIComponent(rawGuest.trim());
+      }
+      document.getElementById('guestNameDisplay').textContent = guestName;
+
+      /* 3. BOTÓN DE WHATSAPP RSVP CON SALÓN ORLANDO FORERO (+573042394091) */
+      const whatsappBtn = document.getElementById('whatsappRsvpBtn');
+      const rsvpRadios = document.querySelectorAll('input[name="rsvpStatus"]');
+      const phoneNumber = "573042394091";
+
+      function updateWhatsAppUrl() {
+        const selectedStatus = document.querySelector('input[name="rsvpStatus"]:checked').value;
+        let message = "";
+
+        if (selectedStatus === "SI") {
+          message = `¡Hola Anyoull! ✨ Con mucha alegría confirmo mi asistencia a tus 15 Años el 03 de Octubre de 2026 en el Salón Orlando Forero (Maripí, Boyacá).\n\n👤 Invitado: *${guestName}*\nNos vemos pronto para celebrar este día tan especial. 👑🥂`;
+        } else {
+          message = `¡Hola Anyoull! 💌 Agradezco de corazón tu invitación a tus 15 Años. Con pesar no podré acompañarte físicamente, pero te deseo una noche mágica y llena de bendiciones.\n\n👤 De: *${guestName}*`;
+        }
+
+        whatsappBtn.href = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+      }
+
+      rsvpRadios.forEach(radio => radio.addEventListener('change', updateWhatsAppUrl));
+      updateWhatsAppUrl();
+
+      /* 4. CRONÓMETRO REGRESIVO ACTIVO EN TIEMPO REAL (03 OCTUBRE 2026 - 18:00 HRS) */
+      const targetDate = new Date(2026, 9, 3, 18, 0, 0).getTime();
+
+      const elDays = document.getElementById('timer-days');
+      const elHours = document.getElementById('timer-hours');
+      const elMin = document.getElementById('timer-minutes');
+      const elSec = document.getElementById('timer-seconds');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        let distance = targetDate - now;
+
+        if (distance <= 0) {
+          elDays.textContent = "00";
+          elHours.textContent = "00";
+          elMin.textContent = "00";
+          elSec.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        elDays.textContent = String(days).padStart(2, '0');
+        elHours.textContent = String(hours).padStart(2, '0');
+        elMin.textContent = String(minutes).padStart(2, '0');
+        elSec.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+</body>
+</html>
