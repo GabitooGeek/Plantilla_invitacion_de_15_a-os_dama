@@ -793,7 +793,7 @@
     }
 
     /* ==========================================================
-       SECCIÓN 8: CÓDIGO DE VESTIMENTA
+       SECCIÓN 8: CÓDIGO DE VESTIMENTA (CON COLORES ACTUALIZADOS)
        ========================================================== */
     .dresscode-section {
       background-color: var(--bg-pink);
@@ -1096,13 +1096,16 @@
     }
 
     /* ==========================================================
-       DESPLEGABLE ELEGANTE: NÚMERO DE PERSONAS
+       DESPLEGABLE: NÚMERO DE PERSONAS (GARANTIZADO 100% VISIBLE)
        ========================================================== */
     .rsvp-attendees-box {
       margin-bottom: 25px;
       position: relative;
-      z-index: 2;
+      z-index: 5;
       text-align: left;
+      display: block; /* Visible por defecto */
+      opacity: 1 !important;
+      visibility: visible !important;
     }
 
     .rsvp-attendees-label {
@@ -1123,9 +1126,9 @@
 
     .rsvp-custom-select {
       width: 100%;
-      padding: 12px 38px 12px 16px;
+      padding: 13px 38px 13px 16px;
       background: #FFFFFF;
-      border: 1.5px solid var(--rose-card);
+      border: 1.8px solid var(--rose-primary);
       border-radius: 8px;
       font-family: var(--font-body);
       font-size: 1.18rem;
@@ -1134,12 +1137,12 @@
       -webkit-appearance: none;
       cursor: pointer;
       outline: none;
-      box-shadow: 0 2px 6px rgba(122, 40, 64, 0.08);
+      box-shadow: 0 2px 8px rgba(122, 40, 64, 0.1);
       transition: border-color 0.2s ease;
     }
 
     .rsvp-custom-select:focus {
-      border-color: var(--rose-primary);
+      border-color: var(--rose-card);
     }
 
     .rsvp-select-arrow {
@@ -1153,7 +1156,6 @@
       stroke: var(--rose-primary);
     }
 
-    /* Campo de texto numérico para más de 6 personas */
     .rsvp-custom-input-wrapper {
       margin-top: 10px;
     }
@@ -1275,7 +1277,6 @@
         </div>
       </div>
 
-      <!-- TEXTO DE ANUNCIO OFICIAL DE LOS PADRES -->
       <div class="intro-blessing-text">
         <p>
           Con el corazón lleno de amor y orgullo, <strong>José Edilfonso González Briceño</strong> y <strong>Sandy Maricela Rico García</strong>, tenemos la dicha de anunciar que nuestra princesa, <strong>Anyoull Yaritza González Rico</strong>, está por vivir su propio cuento de hadas.
@@ -1319,7 +1320,6 @@
         </div>
       </div>
 
-      <!-- ZONA DEL NOMBRE: ABUNDANCIA DE FLORES Y CORAZONES -->
       <div class="name-block reveal-on-scroll">
         <svg class="botanical-line-rose" style="top: 4px; right: 16%; width: 44px; height: 44px; --r: 15deg; opacity: 0.85;" viewBox="0 0 60 60">
           <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
@@ -1808,8 +1808,8 @@
         </label>
       </div>
 
-      <!-- DESPLEGABLE CON OPCIÓN DE ESCRITURA -->
-      <div id="attendeesBox" class="rsvp-attendees-box reveal-scale">
+      <!-- DESPLEGABLE CON VISIBILIDAD GARANTIZADA AL 100% -->
+      <div id="attendeesBox" class="rsvp-attendees-box">
         <label for="attendeesSelect" class="rsvp-attendees-label">NÚMERO DE PERSONAS QUE ASISTEN:</label>
         
         <div class="rsvp-select-wrapper">
@@ -1829,7 +1829,6 @@
           </svg>
         </div>
 
-        <!-- Campo de texto numérico para escribir cuando son más de 6 -->
         <div id="customAttendeesInputWrapper" class="rsvp-custom-input-wrapper" style="display: none;">
           <input type="number" id="customAttendeesInput" min="7" max="50" placeholder="Escribe la cantidad (ej: 8)" class="rsvp-custom-input">
         </div>
@@ -1918,11 +1917,14 @@
 
       /* 4. ACTUALIZACIÓN DINÁMICA DE LA RESPUESTA DE WHATSAPP */
       function updateWhatsAppUrl() {
-        const selectedStatus = document.querySelector('input[name="rsvpStatus"]:checked').value;
+        const selectedRadio = document.querySelector('input[name="rsvpStatus"]:checked');
+        const selectedStatus = selectedRadio ? selectedRadio.value : "SI";
         let message = "";
 
         if (selectedStatus === "SI") {
           attendeesBox.style.display = "block";
+          attendeesBox.style.opacity = "1";
+          attendeesBox.style.visibility = "visible";
           const count = getSelectedCount();
           
           if (count === 1) {
