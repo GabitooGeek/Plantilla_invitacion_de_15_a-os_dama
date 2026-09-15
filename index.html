@@ -208,7 +208,7 @@
     }
 
     /* ==========================================================
-       SECCIÓN 2: RETRATO ARQUEADO (foto1.jpg) & NOMBRE
+       SECCIÓN 2: RETRATO ARQUEADO LIMPIO (foto1.jpg) & NOMBRE
        ========================================================== */
     .portrait-section {
       position: relative;
@@ -459,7 +459,7 @@
     }
 
     /* ==========================================================
-       SECCIÓN 5: GALERÍA DE RECUERDOS (FOTO2 Y FOTO3)
+       SECCIÓN 5: GALERÍA DE RECUERDOS (FOTO2 Y FOTO3) CON ONDA SUAVE
        ========================================================== */
     .gallery-outer-wrapper {
       position: relative;
@@ -1066,18 +1066,21 @@
       z-index: 2;
     }
 
+    /* BOTONES DE OPCIÓN COMPACTOS DE UNA SOLA LÍNEA */
     .rsvp-option-label {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
       background: var(--bg-pink-light);
       border: 1.5px solid var(--rose-blush);
-      padding: 12px 18px;
+      padding: 11px 18px;
       border-radius: 50px;
       cursor: pointer;
       font-family: var(--font-body);
       font-size: 1.15rem;
       color: var(--text-dark);
       transition: all 0.25s ease;
+      white-space: nowrap; /* Garantiza 1 sola línea en cualquier pantalla móvil */
     }
 
     .rsvp-option-label:has(input:checked) {
@@ -1196,7 +1199,6 @@
         </div>
       </div>
 
-      <!-- TEXTO DE ANUNCIO OFICIAL DE LOS PADRES -->
       <div class="intro-blessing-text">
         <p>
           Con el corazón lleno de amor y orgullo, <strong>José Edilfonso González Briceño</strong> y <strong>Sandy Maricela Rico García</strong>, tenemos la dicha de anunciar que nuestra princesa, <strong>Anyoull Yaritza González Rico</strong>, está por vivir su propio cuento de hadas.
@@ -1315,8 +1317,9 @@
       <p class="emotive-paragraph">
         Dicen que la magia existe para quienes creen en los sueños, y que hay noches capaces de quedarse para siempre en el corazón. Ha llegado el momento de abrir las puertas de un cuento donde la ilusión, la elegancia y el amor serán los protagonistas.
       </p>
+      
       <p class="emotive-paragraph">
-        Será un privilegio contar con tu presencia para compartir una noche que marcará el inicio de una nueva etapa en mi vida.
+        Será un privilegio contar con tu presencia para compartir una noche que marcará el inicio de una nueva etapa en su vida.
       </p>
 
       <svg class="botanical-line-rose" style="bottom: 14px; left: 22px; width: 44px; height: 44px; --r: -165deg;" viewBox="0 0 60 60">
@@ -1500,13 +1503,12 @@
         <div class="timeline-row">
           <div class="timeline-icon-col">
             <img src="misa.png" alt="Misa de Quince Años" class="timeline-icon-asset" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <!-- Respaldo Vectorial Iglesia/Capilla -->
             <svg class="timeline-icon-svg-fallback" viewBox="0 0 60 70" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-              <path d="M30 12 L30 20 M26 16 L34 16"/> <!-- Cruz -->
-              <path d="M30 20 L16 32 L44 32 Z"/> <!-- Tejado -->
-              <path d="M20 32 L20 54 L40 54 L40 32"/> <!-- Muros -->
-              <path d="M26 54 L26 42 C26 38 34 38 34 42 L34 54"/> <!-- Puerta arqueada -->
-              <circle cx="30" cy="27" r="2.5" fill="currentColor"/> <!-- Campana / Rosal -->
+              <path d="M30 12 L30 20 M26 16 L34 16"/>
+              <path d="M30 20 L16 32 L44 32 Z"/>
+              <path d="M20 32 L20 54 L40 54 L40 32"/>
+              <path d="M26 54 L26 42 C26 38 34 38 34 42 L34 54"/>
+              <circle cx="30" cy="27" r="2.5" fill="currentColor"/>
             </svg>
           </div>
           <div class="timeline-node-rose">
@@ -1717,14 +1719,15 @@
         Por favor, confirma tu asistencia antes del 20 de Septiembre de 2026 para reservar tu lugar en esta velada inolvidable.
       </p>
 
+      <!-- BOTONES RSVP COMPACTOS DE UNA SOLA LÍNEA -->
       <div class="rsvp-options-container reveal-scale">
         <label class="rsvp-option-label">
           <input type="radio" name="rsvpStatus" value="SI" checked>
-          <span>¡Sí, asistiré con mucho gusto! 🎉</span>
+          <span>¡Sí, asistiré! ✨</span>
         </label>
         <label class="rsvp-option-label">
           <input type="radio" name="rsvpStatus" value="NO">
-          <span>Lo siento, no podré acompañarte 💌</span>
+          <span>No podré asistir 💌</span>
         </label>
       </div>
 
@@ -1778,7 +1781,7 @@
       }
       document.getElementById('guestNameDisplay').textContent = guestName;
 
-      /* 3. BOTÓN DE WHATSAPP RSVP CON SALÓN ORLANDO FORERO (+573042394091) */
+      /* 3. BOTÓN DE WHATSAPP RSVP CON FECHA 2026 (+573042394091) */
       const whatsappBtn = document.getElementById('whatsappRsvpBtn');
       const rsvpRadios = document.querySelectorAll('input[name="rsvpStatus"]');
       const phoneNumber = "573042394091";
