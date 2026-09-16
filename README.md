@@ -1,149 +1,166 @@
 # 👑 Invitación Digital de 15 Años — Anyoull Yaritza Gonzalez Rico
 
-> **Plantilla Web Interactiva de Alta Costura para Quinceañera (Mobile-First)**  
-> Diseño editorial exclusivo en gama *Blush & Rosewood*, animaciones fluidas por scroll, cronómetro en vivo, pases personalizados por URL y confirmación de asistencia automatizada a WhatsApp.
+<p align="center">
+  <img src="https://img.shields.io/badge/Estado-Producci%C3%B3n-success?style=for-the-badge&logo=github" alt="Estado">
+  <img src="https://img.shields.io/badge/Dise%C3%B1o-Mobile--First-ff69b4?style=for-the-badge" alt="Mobile-First">
+  <img src="https://img.shields.io/badge/Gama-Blush_%26_Rosewood-9E3B5A?style=for-the-badge" alt="Paleta">
+  <img src="https://img.shields.io/badge/Licencia-MIT-gold?style=for-the-badge" alt="Licencia">
+</p>
+
+> **Invitación Web Interactiva de Alta Costura para Quinceañera.**  
+> Arquitectura modular profesional, diseño editorial *Blush & Rosewood*, marco concéntrico de lujo, animaciones por scroll, cronómetro regresivo en vivo, pases de honor dinámicos con asignación de cupos por URL y confirmación de asistencia inteligente sincronizada con WhatsApp.
 
 ---
 
 ## 🌐 Demo en Vivo (Live Preview)
 
-Puedes ver la invitación funcionando en tiempo real aquí:  
-👉 **[Ver Invitación en GitHub Pages](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/)**
+Explora la experiencia interactiva en tiempo real:  
+👉 **[Abrir Invitación en GitHub Pages](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/)**
 
 ---
 
-## 📸 Muestra de Personalización de Invitado
+## 💌 Demostración de Pases y Cupos Personalizados
 
-Prueba cómo cambia automáticamente el nombre del invitado abriendo estos enlaces de ejemplo:
+Prueba cómo la tarjeta detecta automáticamente el **nombre del invitado** y la **cantidad de cupos asignados**:
 
-* [Invitación para Familia Pérez](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=Familia+Pérez)
-* [Invitación para Tía Carmen y Familia](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=Tía+Carmen+y+Familia)
-* [Invitación para Carlos Andrés Mendoza](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=Carlos+Andrés+Mendoza)
-
----
-
-## ✨ Características Principales
-
-### 🎨 Diseño y UI/UX de Lujo
-* **Mobile-First Responsive:** Chasis optimizado para smartphones con centrado fluido en computadoras de escritorio.
-* **Paleta Cromática Alta Costura:** Fondo marfil-rosado pastel (`#F9E4EC`), tipografías en *Rosewood* profundo (`#7A2840`), acentos en terciopelo (`#80233B`) y detalles en oro satinado (`#D4AF37`).
-* **Marco Concéntrico Continuo:** Doble filete perimetral en Rosewood y oro satinado con curvas matemáticas perfectas.
-* **Texturas Botánicas Flotantes:** Más de 20 ilustraciones lineales (*line-art*) de rosas y corazones suspendidos en desorden con micro-animaciones de brisa.
-* **Transiciones en Ondas Suaves:** Divisores orgánicos estilo seda/terciopelo entre secciones fotográficas y el fondo rosado.
-
-### ⚙️ Funcionalidades Interactivas (JavaScript Puro)
-1. **Pases de Honor Personalizados vía URL:**
-   * La invitación lee el parámetro `?invitado=Nombre+Apellido` desde el enlace y lo estampa automáticamente en la tarjeta de honor del invitado.
-2. **Confirmación RSVP Directa a WhatsApp:**
-   * Botón conectado al número oficial **`+573042394091`**.
-   * Al seleccionar *«¡Sí, asistiré! ✨»* o *«No podré asistir 💌»*, genera un mensaje personalizado con el nombre del invitado y los detalles del evento listo para enviar en un clic.
-3. **Cronómetro Regresivo Dinámico:**
-   * Cuenta regresiva precisa en tiempo real (Días, Horas, Minutos, Segundos) sincronizada con la fecha del evento: **03 de Octubre de 2026 a las 6:00 p.m.**
-4. **Animaciones por Scroll (*Scroll Reveal*):**
-   * Animaciones a 60 FPS aceleradas por GPU mediante `IntersectionObserver` nativo, revelando fotos, tarjetas y el itinerario en cascada a medida que el usuario se desplaza.
-5. **Geolocalización Integrada:**
-   * Botón directo a Google Maps con la ubicación exacta del evento: [Salón Orlando Forero, Maripí, Boyacá](https://maps.app.goo.gl/uRkBLQErFVaHwk6Z8).
+* 🎟️ **Familia (5 cupos asignados):**  
+  [Ver Invitación de David Pérez y Familia](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=David+Perez+y+familia&cupos=5)
+* 🎟️ **Pareja (2 cupos asignados):**  
+  [Ver Invitación de Carlos y Esposa](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=Carlos+y+Esposa&cupos=2)
+* 🎟️ **Familia Numerosa (8 cupos asignados):**  
+  [Ver Invitación de Familia Benítez](https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=Fredy+Ben%C3%ADtez+y+familia&cupos=8)
 
 ---
 
-## 📁 Estructura del Proyecto
+## 📑 Ficha Técnica del Evento
 
-El proyecto está diseñado para ser ultraligero y autocontenido en un único archivo `index.html` con soporte modular para imágenes locales:
+| Detalle | Información Oficial |
+| :--- | :--- |
+| **Quinceañera** | **Anyoull Yaritza Gonzalez Rico** |
+| **Padres** | José Edilfonso González Briceño y Sandy Maricela Rico García |
+| **Fecha** | **Sábado, 03 de Octubre de 2026** |
+| **Hora de Inicio** | 06:00 p.m. (18:00 hrs) |
+| **Lugar de Recepción** | **Salón Orlando Forero** |
+| **Ubicación** | Maripí, Boyacá — Colombia |
+| **Geolocalización** | [Ver en Google Maps](https://maps.app.goo.gl/uRkBLQErFVaHwk6Z8) |
+| **Código de Vestimenta** | Elegante - Formal (*Reservados: Palo de rosa, blanco y dorado*) |
+| **Obsequio** | Lluvia de Sobres |
+| **WhatsApp RSVP** | [+573042394091](https://wa.me/573042394091) |
+
+---
+
+## ⏰ Itinerario Oficial de Actividades
+
+```text
+  06:00 p.m. ─── ⛪ Misa de quince años
+  07:00 p.m. ─── 🍸 Llegada de invitados
+  08:00 p.m. ─── 👠 Inicio del protocolo
+  09:00 p.m. ─── 🥂 Brindis y cena
+  10:00 p.m. ─── 💃 Rumba
+```
+
+---
+
+## ✨ Características de Diseño y Frontend
+
+### 🎨 Estética Editorial y UI/UX
+* **Paleta de Alta Costura:** Marfil-rosado pastel (`#F9E4EC`), tipografías en *Rosewood* profundo (`#7A2840`), acentos en terciopelo (`#80233B`) y detalles satinados en oro (`#D4AF37`).
+* **Marco Concéntrico Continuo:** Doble filete perimetral en Rosewood y oro que abraza el diseño con curvas matemáticamente balanceadas.
+* **Divisores de Seda Orgánicos:** Transiciones fluidas en curvas Bézier entre las fotos y los fondos claros, sin cortes rectos ni deformaciones.
+* **Atmósfera Floral Flotante:** Más de 25 ilustraciones lineales (*line-art*) de rosas y corazones suspendidos en desorden con micro-animaciones de brisa.
+
+### ⚡ Interactividad y Lógica (JavaScript ES6+)
+* **Pases Personalizados por URL:** Lectura dinámica del parámetro `?invitado=Nombre+Apellido` en el enlace.
+* **Preselección de Cupos (`&cupos=`):** Si el enlace incluye `&cupos=5`, el Pase de Honor muestra los cupos asignados y el menú desplegable se preselecciona automáticamente.
+* **Desplegable Flexible con Escritura Manual:** Si asisten más de 6 personas, el menú abre un campo de texto para escribir la cifra exacta (ej: 7, 8, 10, etc.).
+* **Mensaje Inteligente a WhatsApp:**  
+  * En singular (*"Confirmo mi asistencia con 1 persona"*) o plural (*"Confirmamos con 4 personas"*).  
+  * Oculta el selector y envía un mensaje de declinación educado si eligen *"No podré asistir"*.
+* **Cronómetro Regresivo en Tiempo Real:** Cálculo dinámico con la API nativa de `Date`, descontando segundo a segundo hacia el **3 de Octubre de 2026**.
+* **Animaciones 60 FPS por Scroll:** Detección de visibilidad por hardware con `IntersectionObserver API`.
+
+---
+
+## 🗂️ Arquitectura de Archivos Modular
+
+El proyecto cuenta con una separación limpia y profesional entre estructura, presentación, interactividad y recursos multimedia:
 
 ```plaintext
 Plantilla_invitacion_de_15_a-os_dama/
 │
-├── index.html          # Código maestro (HTML5, CSS3 y JS integrados)
-├── README.md           # Documentación del proyecto
+├── index.html                   # Marcado semántico HTML5
+├── README.md                    # Documentación técnica del proyecto
+├── organizar.sh                 # Script bash de automatización y despliegue
 │
-├── foto1.jpg           # Fotografía principal de portada (enmarcada en arco)
-├── foto2.jpg           # Foto 1 de la galería de recuerdos
-├── foto3.jpg           # Foto 2 de la galería de recuerdos
-├── foto4.jpg           # Foto ambiental para el Hero de la Fecha
+├── css/
+│   └── styles.css               # Reglas de estilo, variables y animaciones
 │
-├── misa.png            # Ícono 1 del itinerario (06:00 p.m. Misa)
-├── icono1.png          # Ícono 2 del itinerario (07:00 p.m. Llegada)
-├── icono2.png          # Ícono 3 del itinerario (08:00 p.m. Protocolo)
-├── icono3.png          # Ícono 4 del itinerario (09:00 p.m. Brindis)
-├── icono4.png          # Ícono 5 del itinerario (10:00 p.m. Rumba)
+├── js/
+│   └── main.js                  # Lógica del cronómetro, RSVP, URL y scroll
 │
-├── recepcion.png       # Ícono decorativo de la tarjeta de recepción
-├── vestidos.png        # Ilustración de moda dentro del Código de Vestimenta
-└── sobre.png           # Ícono de sobre para Lluvia de Sobres
+└── assets/
+    └── img/                     # Recursos gráficos y fotografías
+        ├── foto1.jpg            # Portada principal en arco
+        ├── foto2.jpg            # Galería de recuerdos (mascota)
+        ├── foto3.jpg            # Galería de recuerdos (destellos de gala)
+        ├── foto4.jpg            # Fotografía ambiental hero de la fecha
+        ├── misa.png             # Ícono de Misa (06:00 p.m.)
+        ├── icono1.png           # Ícono de Llegada (07:00 p.m.)
+        ├── icono2.png           # Ícono de Protocolo (08:00 p.m.)
+        ├── icono3.png           # Ícono de Brindis (09:00 p.m.)
+        ├── icono4.png           # Ícono de Rumba (10:00 p.m.)
+        ├── vestidos.png         # Ilustración de Código de Vestimenta
+        ├── recepcion.png        # Torre de copas de recepción
+        └── sobre.png            # Sobre para lluvia de sobres
 ```
 
-> **Nota:** Si alguna imagen `.png` de los íconos no está presente en la carpeta, el código cuenta con un sistema de respaldo vectorial (*SVG fallback*) que mantiene la invitación visualmente completa sin errores.
+> **Sistema de Respaldo Vectorial:** Si alguna imagen `.png` de los íconos no está presente en la carpeta, el sistema activa automáticamente un respaldo vectorial SVG inline idéntico.
 
 ---
 
 ## 🚀 Guía de Personalización Masiva para WhatsApp
 
-Para enviar la invitación a cada persona con su nombre en pantalla:
+Para compartir la invitación personalizada con cada familia o invitado:
 
 ### Estructura del Enlace:
 ```text
-https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=NOMBRE_DEL_INVITADO
+https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=NOMBRE&cupos=CANTIDAD
 ```
-*(Los espacios se pueden escribir con un signo `+` o `%20`)*.
 
-### 💡 Automatizar 100 enlaces en Excel o Google Sheets:
-1. En la **Columna A** coloca la lista de nombres de tus invitados.
-2. En la celda **B2** pega esta fórmula:
+### 💡 Automatizar cientos de enlaces en Excel o Google Sheets:
+1. En la **Columna A** escribe los nombres de los invitados.
+2. En la **Columna B** escribe la cantidad de cupos (1, 2, 4, 5, etc.).
+3. En la **Columna C** pega la siguiente fórmula:
    ```excel
-   ="https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=" & SUSTITUIR(A2, " ", "+")
+   ="https://gabitoogeek.github.io/Plantilla_invitacion_de_15_a-os_dama/?invitado=" & SUSTITUIR(A2; " "; "+") & "&cupos=" & B2
    ```
-3. Arrastra la fórmula hacia abajo y tendrás todos los enlaces personalizados listos para copiar y pegar en los chats de WhatsApp.
+4. Arrastra la fórmula hacia abajo y obtendrás todos los enlaces personalizados listos para enviar por WhatsApp.
 
 ---
 
-## 📅 Datos del Evento
+## 🛠️ Instalación y Uso Local
 
-* **Quinceañera:** Anyoull Yaritza Gonzalez Rico
-* **Padres:** José Edilfonso González Briceño y Sandy Maricela Rico García
-* **Fecha:** Sábado, 03 de Octubre de 2026
-* **Hora:** 06:00 p.m. (18:00 hrs)
-* **Lugar de Recepción:** Salón Orlando Forero
-* **Municipio / Departamento:** Maripí, Boyacá — Colombia
-* **Código de Vestimenta:** Elegante - Formal (*Colores reservados: Palo de rosa, blanco y dorado*)
-* **Regalo:** Lluvia de Sobres
-* **WhatsApp de Confirmación:** [+573042394091](https://wa.me/573042394091)
-
----
-
-## 🛠️ Tecnologías Utilizadas
-
-* **HTML5 Semántico:** Estructura limpia y accesible.
-* **CSS3 Avanzado:**
-  * Variables CSS nativas (*Custom Properties*).
-  * Flexbox y CSS Grid.
-  * Curvas Bézier personalizadas para transiciones y animaciones (`cubic-bezier`).
-  * Reglas de renderizado concéntrico con `pointer-events: none`.
-* **JavaScript Moderno (ES6+):**
-  * `IntersectionObserver API` para animaciones por scroll a 60 FPS.
-  * `URLSearchParams` para lectura dinámica de parámetros GET en URL.
-  * `Date API` para el cálculo en vivo del cronómetro.
-* **SVG Vectorial Puro:** Gráficos vectoriales inline sin librerías externas de íconos para carga instantánea.
-* **Google Fonts:** *Great Vibes*, *Cinzel*, *Playfair Display*, *Cormorant Garamond* y *Montserrat*.
-
----
-
-## 💻 Instalación y Despliegue Local
-
-1. Clona este repositorio:
+1. Clona el repositorio:
    ```bash
    git clone https://github.com/gabitoogeek/Plantilla_invitacion_de_15_a-os_dama.git
    ```
-2. Entra en la carpeta del proyecto:
+2. Entra a la carpeta:
    ```bash
    cd Plantilla_invitacion_de_15_a-os_dama
    ```
-3. Abre el archivo `index.html` en tu navegador favorito:
+3. Ejecuta el archivo en tu navegador:
    ```bash
    # En Windows
    start index.html
 
-   # En Mac
+   # En macOS
    open index.html
    ```
 
 ---
+
+## 💖 Créditos y Licencia
+
+Diseñado con amor para la celebración de los **15 Años de Anyoull Yaritza Gonzalez Rico** en el Salón Orlando Forero (Maripí, Boyacá).
+
+Distribuido bajo la **Licencia MIT**. Siéntete libre de adaptarlo para bodas, aniversarios y fiestas de quince años.
