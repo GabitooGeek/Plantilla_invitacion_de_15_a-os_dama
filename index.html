@@ -1103,7 +1103,7 @@
       position: relative;
       z-index: 5;
       text-align: left;
-      display: block; /* Visible por defecto */
+      display: block;
       opacity: 1 !important;
       visibility: visible !important;
     }
@@ -1277,6 +1277,7 @@
         </div>
       </div>
 
+      <!-- TEXTO DE ANUNCIO OFICIAL DE LOS PADRES -->
       <div class="intro-blessing-text">
         <p>
           Con el corazón lleno de amor y orgullo, <strong>José Edilfonso González Briceño</strong> y <strong>Sandy Maricela Rico García</strong>, tenemos la dicha de anunciar que nuestra princesa, <strong>Anyoull Yaritza González Rico</strong>, está por vivir su propio cuento de hadas.
@@ -1320,6 +1321,7 @@
         </div>
       </div>
 
+      <!-- ZONA DEL NOMBRE: ABUNDANCIA DE FLORES Y CORAZONES -->
       <div class="name-block reveal-on-scroll">
         <svg class="botanical-line-rose" style="top: 4px; right: 16%; width: 44px; height: 44px; --r: 15deg; opacity: 0.85;" viewBox="0 0 60 60">
           <path d="M30 14 C34 10 42 12 43 17 C44 23 37 28 30 28 C24 28 17 23 18 17 C19 12 26 10 30 14 Z"/>
@@ -1785,7 +1787,7 @@
       <div class="guest-pass-card reveal-scale">
         <span class="guest-pass-badge">PASE DE HONOR</span>
         <div class="guest-pass-name" id="guestNameDisplay">Apreciado Invitado</div>
-        <div class="guest-pass-msg">Nos complace extenderte esta invitación especial.</div>
+        <div class="guest-pass-msg" id="guestPassSubtitle">Nos complace extenderte esta invitación especial.</div>
       </div>
 
       <div class="rsvp-header-wrapper reveal-on-scroll">
@@ -1808,7 +1810,7 @@
         </label>
       </div>
 
-      <!-- DESPLEGABLE CON VISIBILIDAD GARANTIZADA AL 100% -->
+      <!-- DESPLEGABLE CON VALOR PRE-SELECCIONADO POR ENLACE -->
       <div id="attendeesBox" class="rsvp-attendees-box">
         <label for="attendeesSelect" class="rsvp-attendees-label">NÚMERO DE PERSONAS QUE ASISTEN:</label>
         
@@ -1874,15 +1876,24 @@
 
       animatedElements.forEach(el => scrollObserver.observe(el));
 
-      /* 2. LECTURA DE INVITADO EN URL (?invitado=Nombre) */
+      /* 2. LECTURA DE INVITADO Y CUPOS ASIGNADOS EN URL (?invitado=Nombre&cupos=5) */
       const urlParams = new URLSearchParams(window.location.search);
       const rawGuest = urlParams.get('invitado') || urlParams.get('pase') || urlParams.get('guest');
+      const rawPasses = urlParams.get('cupos') || urlParams.get('personas') || urlParams.get('pases');
       
       let guestName = "Apreciado(a) Invitado(a)";
       if (rawGuest && rawGuest.trim() !== "") {
         guestName = decodeURIComponent(rawGuest.trim());
       }
       document.getElementById('guestNameDisplay').textContent = guestName;
+
+      // Lectura y asignación de cupos por defecto
+      let defaultCount = 1;
+      if (rawPasses && !isNaN(parseInt(rawPasses)) && parseInt(rawPasses) > 0) {
+        defaultCount = parseInt(rawPasses);
+        document.getElementById('guestPassSubtitle').textContent = 
+          `Pase de honor reservado para ${defaultCount} persona${defaultCount > 1 ? 's' : ''}.`;
+      }
 
       /* 3. LÓGICA DEL DESPLEGABLE Y ESCRITURA DE ASISTENTES */
       const attendeesBox = document.getElementById('attendeesBox');
@@ -1892,6 +1903,16 @@
       const rsvpRadios = document.querySelectorAll('input[name="rsvpStatus"]');
       const whatsappBtn = document.getElementById('whatsappRsvpBtn');
       const phoneNumber = "573042394091";
+
+      // Aplicar valor por defecto del enlace al select
+      if (defaultCount <= 6) {
+        attendeesSelect.value = String(defaultCount);
+        customInputWrapper.style.display = "none";
+      } else {
+        attendeesSelect.value = "mas";
+        customInputWrapper.style.display = "block";
+        customInput.value = defaultCount;
+      }
 
       function getSelectedCount() {
         const val = attendeesSelect.value;
@@ -1905,6 +1926,9 @@
       function handleSelectChange() {
         if (attendeesSelect.value === "mas") {
           customInputWrapper.style.display = "block";
+          if (!customInput.value || parseInt(customInput.value) <= 6) {
+            customInput.value = 7;
+          }
           customInput.focus();
         } else {
           customInputWrapper.style.display = "none";
