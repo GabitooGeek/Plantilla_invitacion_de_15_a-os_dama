@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const customInput = document.getElementById('customAttendeesInput');
   const rsvpRadios = document.querySelectorAll('input[name="rsvpStatus"]');
   const whatsappBtn = document.getElementById('whatsappRsvpBtn');
-  const phoneNumber = "573042394091";
+  const phoneNumber = "573123911199";
 
   // Aplicar valor por defecto al select
   if (defaultCount <= 6) {
