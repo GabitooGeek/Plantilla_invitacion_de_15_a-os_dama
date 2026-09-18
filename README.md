@@ -45,7 +45,7 @@ Prueba cómo la tarjeta detecta automáticamente el **nombre del invitado** y la
 | **Geolocalización** | [Ver en Google Maps](https://maps.app.goo.gl/uRkBLQErFVaHwk6Z8) |
 | **Código de Vestimenta** | Elegante - Formal (*Reservados: Palo de rosa, blanco y dorado*) |
 | **Obsequio** | Lluvia de Sobres |
-| **WhatsApp RSVP** | [+573042394091](https://wa.me/573042394091) |
+| **WhatsApp RSVP** | [+573123911199](https://wa.me/573042394091) |
 
 ---
 
